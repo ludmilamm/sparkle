@@ -20,6 +20,11 @@ The app is an art gallery that list images from artworks and list some details a
 - Retrofit
 - Kotlin Serializer
 
+### TODOs:
+- [ ] Pagination
+- [ ] 2 view modes: grid and carrousel
+- [ ] Save favorite pieces
+- [ ] Instrumental tests
 
 ## Data Consumed
 
