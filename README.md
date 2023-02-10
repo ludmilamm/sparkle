@@ -2,6 +2,8 @@
 
 App developed aiming to practice Android development.
 
+The app is an art gallery that list images from artworks and list some details about the piece.
+
 **Stack:**
 
 - Kotlin
