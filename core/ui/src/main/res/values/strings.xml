@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_message">Ops, something went wrong!</string>
+    <string name="error_try_again">Try Again</string>
+    <string name="empty_message">No items found</string>
+</resources>
