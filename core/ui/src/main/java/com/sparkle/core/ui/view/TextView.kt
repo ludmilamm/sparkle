@@ -11,7 +11,10 @@ import com.sparkle.core.ui.FontSize
 import com.sparkle.core.ui.SparkleTheme
 
 @Composable
-fun TitleView(text: String, modifier: Modifier) {
+fun TitleView(
+    text: String,
+    modifier: Modifier = Modifier
+) {
     Text(
         text = text,
         fontSize = FontSize.large,
@@ -21,7 +24,10 @@ fun TitleView(text: String, modifier: Modifier) {
 }
 
 @Composable
-fun SubtitleView(text: String, modifier: Modifier) {
+fun SubtitleView(
+    text: String,
+    modifier: Modifier = Modifier
+) {
     Text(
         text = text,
         fontSize = FontSize.medium,
@@ -31,7 +37,10 @@ fun SubtitleView(text: String, modifier: Modifier) {
 }
 
 @Composable
-fun NormalTextView(text: String, modifier: Modifier) {
+fun NormalTextView(
+    text: String,
+    modifier: Modifier = Modifier
+) {
     Text(
         text = text,
         fontSize = FontSize.normal,
@@ -41,7 +50,10 @@ fun NormalTextView(text: String, modifier: Modifier) {
 }
 
 @Composable
-fun SmallTextView(text: String, modifier: Modifier) {
+fun SmallTextView(
+    text: String,
+    modifier: Modifier = Modifier
+) {
     Text(
         text = text,
         fontSize = FontSize.small,
@@ -59,7 +71,7 @@ fun TitleViewPreview() {
     }
 }
 
-@Preview
+@Preview(backgroundColor = 0xFFFFFFFF)
 @Composable
 fun SubtitleViewPreview() {
     SparkleTheme {
@@ -67,7 +79,7 @@ fun SubtitleViewPreview() {
     }
 }
 
-@Preview
+@Preview(backgroundColor = 0xFFFFFFFF)
 @Composable
 fun NormalTextViewPreview() {
     SparkleTheme {
@@ -75,7 +87,7 @@ fun NormalTextViewPreview() {
     }
 }
 
-@Preview
+@Preview(backgroundColor = 0xFFFFFFFF)
 @Composable
 fun SmallTextViewPreview() {
     SparkleTheme {

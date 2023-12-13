@@ -17,16 +17,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.sparkle.core.ui.FontSize
 import com.sparkle.core.ui.R
 import com.sparkle.core.ui.Spacing
 import com.sparkle.core.ui.SparkleTheme
-import com.sparkle.core.ui.FontSize
 
 @Composable
 fun IconView(
     icon: ImageVector,
     @StringRes label: Int,
-    modifier: Modifier
+    modifier: Modifier = Modifier
 ) {
     ConstraintLayout(modifier) {
         val (iconRef, textRef) = createRefs()
@@ -60,7 +60,7 @@ fun IconView(
     }
 }
 
-@Preview
+@Preview(backgroundColor = 0xFFFFFFFF)
 @Composable
 fun IconViewPreview() {
     SparkleTheme {

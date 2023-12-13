@@ -19,7 +19,7 @@ fun EmptyView(@StringRes message: Int = R.string.empty_message) {
     )
 }
 
-@Preview
+@Preview(backgroundColor = 0xFFFFFFFF)
 @Composable
 fun EmptyViewPreview() {
     SparkleTheme {

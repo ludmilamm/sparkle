@@ -5,6 +5,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -12,7 +13,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.sparkle.artworks.detail.ArtworkDetailState
 import com.sparkle.artworks.detail.ArtworkDetailViewModel
 import com.sparkle.core.ui.view.ErrorView
-import com.sparkle.core.ui.view.InitLoad
 import com.sparkle.core.ui.view.LoadingView
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -23,7 +23,7 @@ internal fun ArtworkDetailScreen(
 ) {
     val state by viewModel.state.collectAsState()
 
-    InitLoad {
+    LaunchedEffect(artworkId) {
         viewModel.loadData(artworkId)
     }
 
