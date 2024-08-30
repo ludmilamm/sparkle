@@ -7,7 +7,7 @@ interface ArtworksRepository {
 
     suspend fun getArtworks(): Result<Artworks>
 
-    suspend fun getArtworks(nextPage: String): Result<Artworks>
+    suspend fun getArtworks(nextPage: String?): Result<Artworks>
 
     suspend fun getArtwork(id: Long): Result<Artwork>
 }

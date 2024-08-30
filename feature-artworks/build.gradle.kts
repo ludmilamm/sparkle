@@ -34,6 +34,7 @@ dependencies {
     implementation(platform(AppLibs.composeBOM))
     implementation(CommonDependencies.appLibs + PresentationDependencies.appLibs)
     kapt(CommonDependencies.appProcessors)
+    implementation(AppLibs.pagingCompose)
 
     debugImplementation(PresentationDependencies.debugLibs)
 

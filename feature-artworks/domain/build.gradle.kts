@@ -18,6 +18,7 @@ dependencies {
     api(project(":feature-artworks:domain:repository"))
 
     implementation(CommonDependencies.appLibs)
+    implementation(AppLibs.paging)
 
     testImplementation(CommonDependencies.testLibs)
 }

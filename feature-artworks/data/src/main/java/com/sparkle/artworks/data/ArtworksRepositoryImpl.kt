@@ -15,8 +15,12 @@ internal class ArtworksRepositoryImpl @Inject constructor(
         return remoteDataSource.getArtworks().mapCatching { it.toDomain() }
     }
 
-    override suspend fun getArtworks(nextPage: String): Result<Artworks> {
-        return remoteDataSource.getArtworks(nextPage).mapCatching { it.toDomain() }
+    override suspend fun getArtworks(nextPage: String?): Result<Artworks> {
+        return if (nextPage == null) {
+            getArtworks()
+        } else {
+            remoteDataSource.getArtworks(nextPage).mapCatching { it.toDomain() }
+        }
     }
 
     override suspend fun getArtwork(id: Long): Result<Artwork> {

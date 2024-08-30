@@ -1,20 +1,30 @@
 package com.sparkle.artworks.domain
 
-import com.sparkle.artworks.domain.repository.ArtworksRepository
-import com.sparkle.artworks.domain.repository.model.Artworks
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
 import javax.inject.Inject
+import kotlin.math.roundToInt
 
-class GetArtworksUseCase @Inject constructor(
-    private val repository: ArtworksRepository
+class GetArtworksUseCase @Inject internal constructor(
+    private val getArtworkPagingSource: GetArtworkPagingSource
 ) {
 
-    operator fun invoke(nextPage: String? = null): Flow<Result<Artworks>> {
-        return if (nextPage == null) {
-            flow { emit(repository.getArtworks()) }
-        } else {
-            flow { emit(repository.getArtworks(nextPage)) }
-        }
+    companion object {
+        private const val DEFAULT_PAGE_SIZE = 20
+        private const val DEFAULT_PREFETCH_FRACTION = 0.3f
     }
+
+    operator fun invoke(
+        pageSize: Int = DEFAULT_PAGE_SIZE,
+        prefetchFraction: Float = DEFAULT_PREFETCH_FRACTION
+    ) = Pager(
+        config = PagingConfig(
+            pageSize = pageSize,
+            prefetchDistance = (pageSize * prefetchFraction).roundToInt(),
+            initialLoadSize = pageSize,
+            enablePlaceholders = false
+        )
+    ) {
+        getArtworkPagingSource
+    }.flow
 }

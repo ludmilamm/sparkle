@@ -25,6 +25,8 @@ object AppLibs {
     const val okHttpLogging = "com.squareup.okhttp3:logging-interceptor:${AppLibsVersions.okHttp}"
     const val coil = "io.coil-kt:coil-compose:${AppLibsVersions.coil}"
     const val material = "com.google.android.material:material:${AppLibsVersions.material}"
+    const val pagingCompose = "androidx.paging:paging-compose:${AppLibsVersions.paging}"
+    const val paging = "androidx.paging:paging-runtime:${AppLibsVersions.paging}"
 }
 
 object AppLibsVersions {
@@ -46,4 +48,5 @@ object AppLibsVersions {
     const val okHttp = "4.10.0"
     const val coil = "2.2.2"
     const val material = "1.7.0"
+    const val paging = "3.2.1"
 }
